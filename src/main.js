@@ -73,10 +73,7 @@ require(['jquery'], function (jQuery){
         $('#handler_vertical').show().animate({left: defaults.handler_vertical.left}, 100);
         $('fieldset.left .handler.handler_horizontal').show().animate({top: defaults.left_handler_horizontal.top}, 100);
         $('fieldset.right .handler.handler_horizontal').show().animate({top: defaults.right_handler_horizontal.top}, 100);
-        $('#panel_html > .windowLabel').fadeIn(100);
-        $('#panel_js > .windowLabel').fadeIn(100);
-        $('#panel_css > .windowLabel').fadeIn(100);
-        $('#result > .windowLabel').fadeIn(100);
+        $('.windowLabel').attr('style', 'display:initial !important;');
         $('.warningTooltip').show();
       }
 
@@ -112,7 +109,7 @@ require(['jquery'], function (jQuery){
             }
             $.each(panel_ids, function (i, value){
               if (value != panel_id){
-                $('#'+value+' > .windowLabel').fadeOut(100);
+                $('#'+value+' > .windowLabel').attr('style', 'display:none !important;');
               }
             });
           } else resetLayout();
@@ -120,7 +117,7 @@ require(['jquery'], function (jQuery){
       }
 
       var expandIconHTML = '<a id="expand-icon" class="windowLabel"><i class="bts bt-maximize"></i></a>';
-      var expandIconCSS = '.windowLabel{right:32px;}#expand-icon{border:0;cursor:pointer;right:5px;background:none;}#expand-icon>i{border:0;}';
+      var expandIconCSS = '.windowLabel{right:32px;}#expand-icon{display: initial !important;border:0;cursor:pointer;right:5px;background:none;}#expand-icon>i{border:0;}';
 
       $('#panel_html').append(expandIconHTML);
       $('#panel_js').append(expandIconHTML);
