@@ -77,6 +77,7 @@ require(['jquery'], function (jQuery){
         $('#panel_js > .windowLabel').fadeIn(100);
         $('#panel_css > .windowLabel').fadeIn(100);
         $('#result > .windowLabel').fadeIn(100);
+        $('.warningTooltip').show();
       }
 
       function toggle (panel){
@@ -88,6 +89,11 @@ require(['jquery'], function (jQuery){
             $('#handler_vertical').hide();
             $('.handler.handler_horizontal').hide();
             panel.animate({height: '100%'}, 100);
+            $('.warningTooltip').each(function (){
+              if ($(this).parent().attr('id') != panel_id){
+                $(this).hide();
+              }
+            });
             panel.parent().animate({width: '100%'}, 100);
             if (panel.parent().hasClass('right')){
               $('fieldset.left').animate({width: 0}, 100);

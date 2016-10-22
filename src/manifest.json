@@ -1,6 +1,7 @@
 {
   "name": "jsFiddle Panel Expander",
-  "version": "1.0.0",
+  "short_name": "JPE",
+  "version": "1.0.1",
   "description": "Expand panels so you can code without feeling claustrophobic.",
   "author": "Benzi <hi@benzi.io>",
   "browser_action": {
